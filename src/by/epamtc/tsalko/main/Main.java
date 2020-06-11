@@ -6,8 +6,8 @@ public class Main {
         // random values
         String str = "Good afternoon  Java HOW are you Java?";
         String palindrome = "level";
-        String firstBigNumber  = "85749625824293372036854775807";
-        String secondBigNumber =   "949625824293372036854775807";
+        String firstBigNumber  = "985749625824293372036854775807";
+        String secondBigNumber =    "949625824293372036854775807";
 
         Task.showSplitLine(str);
         Task.showRatioLetters(str);
