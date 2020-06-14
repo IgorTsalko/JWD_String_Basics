@@ -28,10 +28,11 @@ public class Main {
         Task.showStringWithoutLastWord(str);
         Task.showStringWithDoubleSpaces(str);
         Task.showStringPalindrome(palindrome);
-        Task.showReplaceSubString(str, "TestTest", 5, 10);
+        Task.showReplaceSubString(str, "TestTest", 5, 14);
         Task.showSumTwoBigNumbers(firstBigNumber, secondBigNumber);
         Task.showRemovingWordsOfGivenLength(str, 4);
         Task.showRemovingExtraSpaces(str);
         Task.showWords(str);
     }
+
 }

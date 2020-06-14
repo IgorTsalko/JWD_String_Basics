@@ -59,17 +59,15 @@ public class TaskLogic {
     }
 
     public String removeDuplicateCharacters(String str) {
-        String copyString = new String(str);
-
         for (int i = 0; i < str.length(); i++) {
             char symbol = str.charAt(i);
 
-            if (copyString.contains(String.valueOf(symbol))) {
-                copyString = copyString.replace(Character.toString(symbol), "");
+            if (str.contains(String.valueOf(symbol))) {
+                str = str.replace(Character.toString(symbol), "");
             }
         }
 
-        return copyString;
+        return str;
     }
 
     public int findFrequencyRepetition(String str, char c) {
@@ -95,33 +93,23 @@ public class TaskLogic {
             start = str.length();
         }
 
-        return str.substring(0, start) +
-                subStr +
-                str.substring(start);
+        return new StringBuilder(str).insert(start, subStr).toString();
     }
 
     public String removeSubString(String str, int start, int end) {
-        StringBuilder result = new StringBuilder(str);
-
         if (end > str.length() - 1) {
             end = str.length();
         }
 
-        result = result.replace(start, end, "");
-
-        return result.toString();
+        return new StringBuilder(str).delete(start, end).toString();
     }
 
     public String copyPartOfString(String str, int start, int end) {
-        String copyOfString;
-
         if (end > str.length() - 1) {
             end = str.length();
         }
 
-        copyOfString = str.substring(start, end);
-
-        return copyOfString;
+        return str.substring(start, end);
     }
 
     public int determineLengthOfString(String str) {
@@ -147,10 +135,10 @@ public class TaskLogic {
         wordsArray = str.split("\\s+");
 
         for (int i = wordsArray.length - 1; i >= 0; i--) {
-            result.append(wordsArray[i] + " ");
+            result.append(wordsArray[i]).append(" ");
         }
 
-        return result.toString().trim();
+        return result.toString().strip();
     }
 
     public String replaceSpacesWithAsterisks(String str) {
@@ -232,9 +220,7 @@ public class TaskLogic {
     }
 
     public String replaceSubString(String str, String subString, int start, int end) {
-        return str.substring(0, start) +
-                subString +
-                str.substring(end);
+        return new StringBuilder(str).replace(start, end, subString).toString();
     }
 
     public String addTwoNumbers(String firstNumber, String secondNumber) {
@@ -328,5 +314,4 @@ public class TaskLogic {
     public String[] extractWords(String str) {
         return str.split("\\s+");
     }
-    
 }

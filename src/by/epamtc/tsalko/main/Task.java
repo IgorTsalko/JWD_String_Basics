@@ -1,5 +1,7 @@
 package by.epamtc.tsalko.main;
 
+import java.util.Arrays;
+
 public class Task {
 
     private static TaskLogic logic = new TaskLogic();
@@ -171,21 +173,12 @@ public class Task {
     }
 
     public static void showWords(String str) {
+        String result;
         String[] words;
+
         words = logic.extractWords(str);
+        result = String.join(", ", Arrays.asList(words));
 
-        StringBuilder result;
-        result = new StringBuilder(String.format("String [%s] содержит слова: ", str));
-
-        for (int i = 0; i < words.length; i++) {
-            result.append(words[i]);
-
-            if (i != words.length - 1) {
-                result.append(", ");
-            }
-        }
-
-        System.out.println(result.toString());
+        System.out.printf("String [%s] содержит слова: [%s]", str, result);
     }
-
 }
